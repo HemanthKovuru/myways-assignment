@@ -1,0 +1,235 @@
+@import "./mixins";
+
+// navbar
+.navbar {
+  position: relative;
+
+  &__container {
+    box-shadow: 0 3px 6px #0000000f;
+  }
+  height: 7rem;
+  margin: 0 auto;
+
+  display: grid;
+  width: 130rem;
+
+  margin: 0 auto;
+  grid-template-columns: 20rem 1fr 83rem;
+  line-height: 7rem;
+
+  // seperate signup and login
+  &__split-links {
+    display: none;
+
+    @include responsive(tabport) {
+      display: grid;
+      grid-template-columns: 11rem 11rem;
+      justify-content: right;
+      margin-right: 5rem;
+    }
+  }
+
+  @include responsive(tabport) {
+    grid-template-columns: 15% 10% 1fr;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  // company logo
+  &__img {
+    width: 7rem;
+    height: 7rem;
+
+    @include responsive(tabport) {
+      grid-column: 2/ 3;
+    }
+    @include responsive(samllerphone) {
+      opacity: 0;
+    }
+  }
+
+  // navbar links
+  &__links {
+    list-style: none;
+    grid-column: 3/-1;
+
+    @include responsive(tabport) {
+      position: fixed;
+      z-index: 999;
+      top: 7rem;
+      left: 0;
+
+      background-color: #f2f2f2;
+      width: 100vw;
+      display: none;
+    }
+  }
+
+  // navbar item
+
+  &__item {
+    width: 13.3rem;
+    display: inline-block;
+    text-align: center;
+
+    @include responsive(tabport) {
+      width: 100%;
+    }
+  }
+
+  // navbar link
+
+  &__link {
+    border: none;
+    background-color: #fff;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    @include responsive(tabport) {
+      background-color: #f2f2f2;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// display none
+.disp {
+  @include responsive(tabport) {
+    display: none;
+  }
+}
+
+// parent dropbox
+.dropdown-box {
+  position: relative;
+}
+
+// child dropbox
+.dropdown {
+  position: absolute;
+  background-color: #ffffff;
+  list-style: none;
+  width: 30rem;
+  box-shadow: 0px 3px 12px #4b494926;
+  line-height: 5rem;
+  visibility: hidden;
+  opacity: 0;
+  right: -10rem;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+    z-index 0s linear 0.01s;
+
+  li {
+    border: 0.1px solid rgba(112, 112, 112, 0.1);
+    cursor: pointer;
+  }
+
+  @include responsive(tabport) {
+    right: 5rem;
+  }
+}
+
+.dropdown-box:focus .dropdown,
+.dropdown-box:focus-within .dropdown,
+.dropdown-box:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0s, 0s, 0.3s;
+}
+
+// hamburger menu
+.menu {
+  display: none;
+
+  &:checked ~ .navbar__links {
+    display: block;
+  }
+}
+
+// hamburger menu logo
+.menu-label {
+  display: none;
+  @include responsive(tabport) {
+    display: block;
+    text-align: right;
+    grid-row: 1/2;
+    margin-left: 2rem;
+  }
+}
+
+.menu-icon {
+  vertical-align: middle;
+  @include responsive(tabport) {
+    margin-right: 5rem;
+  }
+}
+
+#menu:checked .navbar__links {
+  display: block;
+}
+
+//////////////////////////
+// buttons
+/////////////////////////
+.btn-signup {
+  color: #7ecb20;
+  text-transform: uppercase;
+}
+
+.btn {
+  color: #fff;
+  background-color: #7ecb20;
+}
+
+.btn-green {
+  width: 13.4rem;
+  padding: 0.8rem 0;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-green-big {
+  border: none;
+  border-radius: 2.7rem;
+  padding: 1.3rem;
+  width: 23rem;
+  margin: 5rem 0;
+  cursor: pointer;
+
+  font: normal normal bold 2.4rem Open Sans;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// icons
+.icon-down {
+  margin-left: 1rem;
+  margin-bottom: 2px;
+}
+
+.instant-box {
+  width: 16rem;
+
+  @include responsive(tabport) {
+    width: 100%;
+  }
+}
+.icon-instant {
+  vertical-align: middle;
+}
