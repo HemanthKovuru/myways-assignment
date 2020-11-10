@@ -1,3 +1,5 @@
+@import "./scss//mixins";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,10 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @include responsive(smallphone) {
+    font-size: 60%;
+  }
 }
 
 body {

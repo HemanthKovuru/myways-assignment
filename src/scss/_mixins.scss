@@ -41,6 +41,12 @@
     } // 375px
   }
 
+  @if ($breakpoint == threephone) {
+    @media (max-width: 22.5em) {
+      @content;
+    } // 360
+  }
+
   @if ($breakpoint == samllerphone) {
     @media (max-width: 21.3em) {
       @content;

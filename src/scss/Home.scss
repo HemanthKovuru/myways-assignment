@@ -15,6 +15,13 @@
     width: 100vw;
     padding: 1rem;
   }
+
+  @include responsive(threephone) {
+    top: 75%;
+  }
+  @include responsive(samllerphone) {
+    top: 65%;
+  }
 }
 
 // header primary-heading
@@ -24,13 +31,20 @@
   margin-bottom: 1.5rem;
 
   font: normal normal bold 4.1rem Open Sans;
+
+  @include responsive(smallphone) {
+    font-size: 3rem;
+  }
 }
 
 // header paragraph
 .paragraph {
   opacity: 0.8;
-
   font: normal normal normal 2.8rem Open Sans;
+
+  @include responsive(smallphone) {
+    font-size: 2rem;
+  }
 }
 
 // low opacity background for popup boxes
