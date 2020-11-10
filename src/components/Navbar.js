@@ -17,8 +17,10 @@ const Navbar = ({ signinPopup, signupPopup }) => {
 
         {/* split-links */}
         <div className='navbar__split-links'>
-          <li className='navbar__item'>
-            <button onClick={signupPopup} className='navbar__link btn-signup'>
+          <li className='navbar__item '>
+            <button
+              onClick={signupPopup}
+              className='navbar__link btn-signup nav_link-custom'>
               Sign Up
             </button>
           </li>

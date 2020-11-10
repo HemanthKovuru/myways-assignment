@@ -97,6 +97,10 @@
   }
 }
 
+.nav_link-custom {
+  background-color: #fff !important;
+}
+
 // display none
 .disp {
   @include responsive(tabport) {
